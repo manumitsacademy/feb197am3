@@ -1,0 +1,30 @@
+
+<div>
+  Name:<input type="text" [(ngModel)]="name"><br>
+  price:<input type="text" [(ngModel)]="price"><br>
+  qunatity:<input type="text" [(ngModel)]="quantity"><br>
+  discount:<input type="text" [(ngModel)]="discount"><br>
+  gst:<input type="text" [(ngModel)]="gst"><br>
+  <button (click)="addToBill()">Add to Bill</button>
+</div>
+<div>
+  <table border="2">
+    <tr>
+      <th>Sno.</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Discount</th>
+      <th>GST</th>
+      <th>Value</th>
+    </tr>
+    <tr *ngFor="let product of cart;let i = index">
+      <th>{{i+1}}</th>
+      <th>{{product.name}}</th>
+      <th>{{product.price}}</th>
+      <th>{{product.quantity}}</th>
+      <th>{{product.discount}}</th>
+      <th>{{product.gst}}</th>
+    </tr>
+  </table>
+</div>
