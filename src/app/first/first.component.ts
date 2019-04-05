@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ArthService } from '../arth.service';
-
+import { map } from 'rxjs/operators'
 @Component({
   selector: 'app-first',
   templateUrl: './first.component.html',
@@ -34,5 +34,16 @@ export class FirstComponent{
       }
     });
     console.log("Im in multiplication function last line");    
+  }
+
+  div(){
+    this.arthService.divide(this.num1,this.num2)
+    .pipe(
+      map((res)=>{return Math.floor(res)})
+    )
+    .subscribe(function(res){
+      console.log(res);
+    });
+    console.log("div last line")
   }
 }

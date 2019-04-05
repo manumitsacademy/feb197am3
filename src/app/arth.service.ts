@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +21,11 @@ export class ArthService {
   multiply(x,y){
     var z = x*y;
     return Promise.resolve(z);
+  }
+  
+  divide(x,y){
+    var z =x/y;
+    return of(z);
   }
   
 }

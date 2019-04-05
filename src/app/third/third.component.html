@@ -1,0 +1,17 @@
+<button (click)="abc()">My employeess</button>
+<div>
+  <form #empForm="ngForm" (ngSubmit)="ppq()">
+      <input type="text" name="firstname" placeholder="firstname" #firstname="ngModel" [ngModel]><br/>
+      <input type="text" name="lastname" placeholder="lastname"  #lastname="ngModel" [ngModel]><br/>
+      <input type="text" name="dob" placeholder="dob"  #dob="ngModel" [ngModel]><br/>
+      <input type="text" name="location" placeholder="location" #location="ngModel" [ngModel]><br/>
+      <button type="submit" (click)="xyz(empForm)">Add Employee</button>
+  </form>
+  
+</div>
+<h3 *ngIf="databases==null">loading...</h3>
+<ul *ngIf="databases!=null">
+  <li *ngFor="let x of databases">
+    {{x.firstname}}<button (click)="del(x._id.$oid)">Delete</button>
+  </li>
+</ul>
